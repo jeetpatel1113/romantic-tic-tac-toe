@@ -7,14 +7,24 @@
     <link rel="stylesheet" href="style.css" />
     <script
       async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6247339208056447"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
     <div class="container">
       <h1>Tic-Tac-Toe</h1>
-      <div class="board"></div>
+      <div class="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
       <div class="status">Player X's turn</div>
       <button id="restartBtn">Restart Game</button>
 
@@ -22,8 +32,8 @@
         <ins
           class="adsbygoogle"
           style="display: block"
-          data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-          data-ad-slot="YOUR_AD_UNIT_ID"
+          data-ad-client="ca-pub-6247339208056447"
+          data-ad-slot="5625080350"
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
@@ -32,7 +42,22 @@
         </script>
       </div>
     </div>
-    <div id="truthDareModal" class="modal"></div>
+    <div id="truthDareModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalQuestion"></p>
+        <div id="choiceButtons">
+          <button id="chooseTruth">Truth</button>
+          <button id="chooseDare">Dare</button>
+        </div>
+        <div id="resultSection" style="display: none">
+          <p id="resultText"></p>
+          <button id="restartAfterResult">Play Again</button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,95 +1,83 @@
-<<<<<<< HEAD
 body {
-  font-family: "Segoe Script", cursive; /* A more romantic, script-like font */
+  font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(
-    to bottom right,
-    #ffe6f0,
-    #e0f7fa
-  ); /* Soft pastel gradient background */
+  background-color: #f4f4f4;
 }
 
 .container {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Semi-transparent white container */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 h1 {
-  color: #c977a9; /* A soft pink for the title */
+  color: #333;
   margin-bottom: 20px;
-  font-size: 2.5em;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 80px); /* Slightly smaller cells */
+  grid-template-columns: repeat(3, 80px);
   grid-template-rows: repeat(3, 80px);
-  gap: 10px; /* Increased gap for a softer look */
-  margin: 25px 0;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .cell {
-  background-color: #f8bbd0; /* Light pink for cells */
+  background-color: #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5em; /* Slightly larger symbols */
+  font-size: 2em;
   cursor: pointer;
-  border-radius: 10px; /* Rounded corners for cells */
-  color: #fff; /* White text color for symbols */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease; /* Smooth hover transition */
-}
-
-.cell:hover {
-  background-color: #f48fb1; /* Darker pink on hover */
+  border-radius: 4px;
 }
 
 .cell.x {
-  color: #81d4fa; /* Soft blue for X */
-  font-family: "Dancing Script", cursive; /* Another romantic font for X */
+  color: #e74c3c; /* Red */
 }
 
 .cell.o {
-  color: #f06292; /* Deeper pink for O */
-  font-family: "Lobster", cursive; /* Another romantic font for O */
+  color: #3498db; /* Blue */
 }
 
 .status {
-  margin-bottom: 20px;
+  color: #555;
+  margin-bottom: 15px;
   font-weight: bold;
-  color: #7b1fa2; /* Purple for the status text */
-  font-size: 1.2em;
 }
 
-#restartBtn {
-  padding: 12px 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #c977a9; /* Soft pink for the button */
+button {
+  background-color: #5cb85c;
   color: white;
-  transition: background-color 0.3s ease;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
 }
 
-#restartBtn:hover {
-  background-color: #ad4373; /* Darker pink on button hover */
+button:hover {
+  background-color: #4cae4c;
 }
 
-/* Modal Styles (Pink Theme) */
+.ad-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%; /* Ensure it takes full width of container */
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -99,269 +87,53 @@ h1 {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(240, 198, 218, 0.7); /* Light pink w/ opacity */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .modal-content {
-  background-color: #ffe6f0; /* Very light pink background */
+  background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 30px;
-  border: 1px solid #f48fb1; /* Pink border */
+  padding: 20px;
+  border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
-  border-radius: 15px;
+  border-radius: 8px;
   position: relative;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .close-button {
-  color: #f48fb1; /* Pink close button */
-  float: right;
-  font-size: 30px;
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2em;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close-button:hover,
 .close-button:focus {
-  color: #c977a9; /* Darker pink on hover */
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-#modalTitle {
-  color: #e91e63; /* Bright pink title */
+#choiceButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 2em;
-}
-
-#modalQuestion {
-  font-size: 1.15em;
-  margin-bottom: 25px;
-  color: #ad1457; /* Darker pink question text */
 }
 
 #choiceButtons button {
-  padding: 12px 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #f06292; /* Medium pink button */
-  color: white;
-  margin: 0 15px;
-  transition: background-color 0.3s ease;
-}
-
-#choiceButtons button:hover {
-  background-color: #e6005c; /* Darker pink on button hover */
+  /* Inherits button styles, can add specific ones if needed */
 }
 
 #resultSection {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
-#resultText {
-  font-style: italic;
-  color: #880e4f; /* Deep pink result text */
-  margin-bottom: 20px;
-  font-size: 1.2em;
+#resultSection button {
+  margin-top: 15px;
 }
-
-#restartAfterResult {
-  padding: 12px 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #c2185b; /* Another shade of pink for restart */
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-#restartAfterResult:hover {
-  background-color: #9a0036; /* Darker shade on restart hover */
-}
-=======
-body {
-  font-family: "Segoe Script", cursive; /* A more romantic, script-like font */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background: linear-gradient(
-    to bottom right,
-    #ffe6f0,
-    #e0f7fa
-  ); /* Soft pastel gradient background */
-}
-
-.container {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Semi-transparent white container */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-h1 {
-  color: #c977a9; /* A soft pink for the title */
-  margin-bottom: 20px;
-  font-size: 2.5em;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, 80px); /* Slightly smaller cells */
-  grid-template-rows: repeat(3, 80px);
-  gap: 10px; /* Increased gap for a softer look */
-  margin: 25px 0;
-}
-
-.cell {
-  background-color: #f8bbd0; /* Light pink for cells */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5em; /* Slightly larger symbols */
-  cursor: pointer;
-  border-radius: 10px; /* Rounded corners for cells */
-  color: #fff; /* White text color for symbols */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease; /* Smooth hover transition */
-}
-
-.cell:hover {
-  background-color: #f48fb1; /* Darker pink on hover */
-}
-
-.cell.x {
-  color: #81d4fa; /* Soft blue for X */
-  font-family: "Dancing Script", cursive; /* Another romantic font for X */
-}
-
-.cell.o {
-  color: #f06292; /* Deeper pink for O */
-  font-family: "Lobster", cursive; /* Another romantic font for O */
-}
-
-.status {
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #7b1fa2; /* Purple for the status text */
-  font-size: 1.2em;
-}
-
-#restartBtn {
-  padding: 12px 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #c977a9; /* Soft pink for the button */
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-#restartBtn:hover {
-  background-color: #ad4373; /* Darker pink on button hover */
-}
-
-/* Modal Styles (Pink Theme) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(240, 198, 218, 0.7); /* Light pink w/ opacity */
-}
-
-.modal-content {
-  background-color: #ffe6f0; /* Very light pink background */
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 30px;
-  border: 1px solid #f48fb1; /* Pink border */
-  width: 80%; /* Could be more or less, depending on screen size */
-  border-radius: 15px;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.close-button {
-  color: #f48fb1; /* Pink close button */
-  float: right;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-  color: #c977a9; /* Darker pink on hover */
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#modalTitle {
-  color: #e91e63; /* Bright pink title */
-  margin-bottom: 20px;
-  font-size: 2em;
-}
-
-#modalQuestion {
-  font-size: 1.15em;
-  margin-bottom: 25px;
-  color: #ad1457; /* Darker pink question text */
-}
-
-#choiceButtons button {
-  padding: 12px 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #f06292; /* Medium pink button */
-  color: white;
-  margin: 0 15px;
-  transition: background-color 0.3s ease;
-}
-
-#choiceButtons button:hover {
-  background-color: #e6005c; /* Darker pink on button hover */
-}
-
-#resultSection {
-  margin-top: 25px;
-}
-
-#resultText {
-  font-style: italic;
-  color: #880e4f; /* Deep pink result text */
-  margin-bottom: 20px;
-  font-size: 1.2em;
-}
-
-#restartAfterResult {
-  padding: 12px 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #c2185b; /* Another shade of pink for restart */
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-#restartAfterResult:hover {
-  background-color: #9a0036; /* Darker shade on restart hover */
-}
->>>>>>> 2bd0a9b62e40101fcd6715b3b0a7dd360c204d02
