@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "truths": [
       "What is your biggest secret?",
@@ -8,4 +9,16 @@
       "...",
       "Your next truth question"
     ]
+=======
+{
+    "truths": [
+      "What is your biggest secret?",
+      "What is something you've lied about?",
+      "Who is the last person you stalked online?",
+      "What is the most embarrassing song on your playlist?",
+      "What is a bad habit you want to break?",
+      "...",
+      "Your next truth question"
+    ]
+>>>>>>> 2bd0a9b62e40101fcd6715b3b0a7dd360c204d02
   }
