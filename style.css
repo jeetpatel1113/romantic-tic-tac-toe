@@ -126,9 +126,9 @@ button:hover {
   margin-bottom: 20px;
 }
 
-#choiceButtons button {
+/* #choiceButtons button {
   /* Inherits button styles, can add specific ones if needed */
-}
+/*}*/
 
 #resultSection {
   margin-top: 20px;
